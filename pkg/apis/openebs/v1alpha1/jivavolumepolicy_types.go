@@ -30,8 +30,10 @@ type JivaVolumePolicySpec struct {
 	// creating the pvc for the replicas (provisioned by localpv provisioner)
 	ReplicaSC string `json:"replicaSC,omitempty"`
 	// EnableBufio ...
+	// +nullable
 	EnableBufio bool `json:"enableBufio"`
 	// AutoScaling ...
+	// +nullable
 	AutoScaling bool `json:"autoScaling"`
 	// ServiceAccountName can be provided to enable PSP
 	ServiceAccountName string `json:"serviceAccountName,omitempty"`
@@ -49,7 +51,7 @@ type JivaVolumePolicySpec struct {
 // TargetSpec represents configuration related to jiva target deployment
 type TargetSpec struct {
 	// Monitor enables or disables the target exporter sidecar
-	Monitor bool `json:"monitor,omitempty"`
+	Monitor bool `json:"monitor"`
 
 	// ReplicationFactor represents maximum number of replicas
 	// that are allowed to connect to the target
